@@ -1,0 +1,33 @@
+<!-- Your package folder -->
+<br.com.leitortweets.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe" >
+    
+    <Button
+        android:id="@+id/btn_corinthians"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/dashboard_btn_corinthians"
+        android:text="@string/corinthians" />
+ 
+    <Button
+        android:id="@+id/btn_flamengo"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/dashboard_btn_flamengo"
+        android:text="@string/flamengo" />
+    
+    <Button
+        android:id="@+id/btn_sao_paulo"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/dashboard_btn_sao_paulo"
+        android:text="@string/sao_paulo" />
+
+    <Button
+        android:id="@+id/btn_vasco"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/dashboard_btn_vasco"
+        android:text="@string/vasco" />
+    
+</br.com.leitortweets.DashboardLayout>

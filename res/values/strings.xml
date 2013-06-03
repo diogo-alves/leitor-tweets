@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">TweeTime</string>
+    <string name="title_activity_leitor">Tweets de seu time</string><string name="menu_settings">Configurações</string>
+    
+    <string name="tweet">tweet</string>
+    
+    <string name="corinthians">Corinthians</string>
+    <string name="flamengo">Flamengo</string>
+    <string name="sao_paulo">São Paulo</string>
+    <string name="vasco">Vasco</string>
+    <string name="nome">Nome</string><string name="usuario">Usuário</string><string name="imagem_perfil">Imagem de perfil</string>
+    
+    <string name="mensagem">Mensagem</string>
+    <string name="data_criacao">Data de criação</string>
+
+</resources>
