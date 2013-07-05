@@ -88,7 +88,7 @@ public class BitmapManager {
 
 		// check in UI thread, so no concurrency issues
 		if (bitmap != null) {
-			Log.d("Usando cache:", "Item baixado do cache: " + url);
+			Log.d("Usando cache:", "Item baixado: " + url);
 			imageView.setImageBitmap(bitmap);
 		} else {
 			imageView.setImageBitmap(placeholder);

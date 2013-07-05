@@ -1,3 +1,7 @@
+/*
+ * @author: Diogo Alves <diogo.alves.ti@gmail.com>
+ */
+
 package br.com.leitortweets;
 
 import android.app.Activity;
@@ -8,8 +12,8 @@ import android.view.View.OnClickListener;
 
 public class MainActivity extends Activity implements OnClickListener{
 
-	private static final String CORINTHIANS = "corinthiansnews";//"sitecorinthians";
-	private static final String FLAMENGO = "flamengo"; //"CR_flamengo";
+	private static final String CORINTHIANS = "sitecorinthians";
+	private static final String FLAMENGO = "CR_flamengo";
 	private static final String SAO_PAULO = "SaoPauloFC";
 	private static final String VASCO = "crvascodagama";
 

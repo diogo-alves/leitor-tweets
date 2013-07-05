@@ -1,9 +1,12 @@
+/*
+ * @author: Diogo Alves <diogo.alves.ti@gmail.com>
+ */
+
 package br.com.leitortweets;
 
 import java.util.ArrayList;
 
 import android.content.Context;
-import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,25 +17,26 @@ import android.widget.TextView;
 
 public class TweetAdapter  extends ArrayAdapter<Tweet> {
 
-
+	private Context context;
 	private ArrayList<Tweet> tweets;
 
-	public TweetAdapter(Context context, int textViewResourceId, ArrayList<Tweet> tweets) {
-		super(context, textViewResourceId, tweets);
+	public TweetAdapter(Context context, int viewResourceId, ArrayList<Tweet> tweets) {
+		super(context, viewResourceId, tweets);
+		this.context = context;
 		this.tweets = tweets;
 	}
-
+	
 	@Override
-	public View getView(int posicao, View convertView, ViewGroup parent){
+	public View getView(int posicao, View view, ViewGroup parent){
 
-		View view = convertView;
+		/* 
+		 * Caso queira otimizar este código aconselho ler este artigo:
+		 * www.piwai.info/android-adapter-good-practices
+		 */
 
 		if (view == null) {
-			LayoutInflater inflater = (LayoutInflater) 
-					getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = inflater.inflate(R.layout.lista_tweets_adapter, null);
+			view = LayoutInflater.from(context).inflate(R.layout.tweet_adapter, parent, false);
 		}
-
 
 		Tweet tweet = tweets.get(posicao);
 
@@ -44,30 +48,14 @@ public class TweetAdapter  extends ArrayAdapter<Tweet> {
 			TextView mensagem = (TextView) view.findViewById(R.id.mensagem);
 			TextView data = (TextView) view.findViewById(R.id.data);
 
-			
-			if(nome != null){
-				nome.setText(tweet.getNome());
-			}
-			if(usuario != null){
-				usuario.setText("@" + tweet.getUsuario());
-			}
-			if(imagem != null){
-				BitmapManager.getInstance().loadBitmap(tweet.getImagem_url(), imagem);
-			}
-			if (mensagem != null){
-				mensagem.setText(tweet.getMensagem());
-				mensagem.setMovementMethod(LinkMovementMethod.getInstance());
-			}
-			if (data != null){
-				
-				data.setText(tweet.getData());
-			}
-
+			nome.setText(tweet.getNome());
+			usuario.setText("@" + tweet.getUsuario());
+			BitmapManager.getInstance().loadBitmap(tweet.getUrlImagemPerfil(), imagem);
+			mensagem.setText(tweet.getMensagem());
+			data.setText(tweet.getData());
 		}
 
 		return view;
-
 	}
-
 }
 
